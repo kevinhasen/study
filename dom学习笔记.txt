@@ -1,0 +1,91 @@
+今天的学习总用时4个小时,今天的学习目标是js的dom,已达成
+今天学习了JavaScript的dom,学习了直接向html写内容,查找html元素的方法
+通过id查找
+document.getElementById("idnaem")
+
+通过标签名找到html元素          返回的是数组
+document.getElementByTagName("labelname")
+
+通过类名找到html元素             返回的是数组
+document.getElementByClassName("classname")
+
+
+改变html的内容
+最简单的方法是使用innerHTML属性
+document.getElementById('idname').innerHTML="new HTML"
+使用标签名和class名改变html元素内容
+for(var i=0;i<len;i++){
+elements[i].innerHTML='content'      content是内容的意思
+}
+
+
+
+改变html属性
+document.getElementById('idname').属性值="new value"
+使用标签名和class名改变html元素属性的方法
+for(var i=0;i<len;i++){
+elements[i].属性="value"
+}
+
+
+改变css
+
+改变html元素的样式
+使用id的方法改变元素css样式
+document.getElementById(id).style.property=new style                    property是所有物的意思,表示这里的是它的属性比如color
+使用标签名和class名方法改变css样式
+for(var i=0;i<len;i++){
+    elements[i].style.property="new style"           个人理解style的属性成为所有物,比如字体颜色color
+}
+
+function changeCss(elements,cssname,cssvalue){              这里cssname是指它的属性名字,比如color,
+    var len=elements.length              元素的长度
+    for(var i=0;i<len;i++){
+        elements[i].style[cssname]=cssvalue                cssvalue表示想修改的值,比如red
+    }
+    
+    
+}
+
+
+dom事件
+
+可以将事件插入html标签以定义事件的行为
+Event="触发执行的JavaScript代码"
+
+
+常用事件句柄Event handlers
+
+比如以下事件
+onclick     当用户点击鼠标时
+ondblclick    当用户双击某个对象时
+onload        一张页面或一幅图完成加载
+onfocus      元素获得焦点
+onblur        元素失去焦点
+onkeydown    某个键盘按键被按下
+onkeypress    某个键盘按键被按下并松开
+onmousedown    鼠标按钮被按下
+onmousemove   鼠标被移动
+onmouseout      鼠标从某元素移开
+onmouseover       鼠标移到某元素之上
+
+
+对dom更深入了,从基础学起,努力
+
+
+今天的代码,有些英语单词必须记住,
+dom的代码
+document     文档的意思
+element        元素的意思
+inner            里面的意思
+function       函数的意思
+
+
+
+css的代码
+width       宽度
+hight        高度
+background    背景颜色的意思
+line-height       行高
+text-align        文本的水平对齐方式
+border-radius        添加圆角的边框,直译是边界半径
