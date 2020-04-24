@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>跟着模仿</title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+				/*  千万要注意,不要错打成height!!!*/
+			}
+			/*清除浮动*/
+			
+			.clear {
+				clear: both;
+			}
+			/*主体*/
+			
+			.zt {
+				width: 100%;
+			}
+			/*头部*/
+			
+			.tb {
+				/*宽度大小根据图片来定*/
+				width: 950px;
+				height: 156px;
+				background: url(20180404中原诗词网/images/heaebg.jpg);
+				/*css里居中,这么给,外边距margin属性四个边自动的,就是居中状态????*/
+				margin: auto;
+			}
+			/*虽然图片已经在左边,但由于右边登录与注册,所以做个浮动*/
+			/*头部图片*/
+			
+			img {
+				float: left;
+				/* 向左浮动,否则登录按钮会默认块元素排着下*/
+				cursor: pointer;
+				/*鼠标移上去有个小手样式*/
+			}
+			/*头部登录*/
+			
+			.wb {
+				float: right;
+				/*向右浮动*/
+				margin-top: 10px;
+				/*设置上外边距*/
+				background: #FFFFFF;
+				/*设置白色背景*/
+			}
+			
+			.wb a {
+				text-decoration: none;
+				color: #000000;
+				font-size: 13px;
+			}
+			
+			.wb a:hover {
+				color: green;
+			}
+			/*a{这里不是直接用a标签,不要直接全局
+				color:  #000000;
+				text-decoration: none;
+			}
+			a:hover{
+				color: green;
+			}*/
+			/*导航添加细节*/
+			
+			.dh {
+				background: #559342;
+				height: 30px;
+				height: 100%;
+				/*!!!!感叹号表示新加的样式*/
+				/*!!!!导航添加阴影比较有曲面的感觉,有五个值,第一个是x轴的位移,第二个是y轴的位移*/
+				/*第三个是阴影的宽度,第四个是颜色值,阴影有两个方向,一个是内部,一个是外部,inset是内部*/
+				box-shadow: 0px 5px 20px #1F4612 inset;
+			}
+			/*我第一反应是给导航包个div,然后设置宽度,在居中，其实直接可以设宽度*/
+			
+			ul {
+				width: 950px;
+				/* 根据图片背景的宽度设置导航栏宽度,很重要!!!!没想到*/
+				height: 30px;
+				/* 和父元素一样高*/
+				margin: auto;
+				/*css居中用margin,auto*/
+			}
+			
+			ul li {
+				float: left;
+				/*左浮动*/
+				list-style: none;
+				/*去掉标志*/
+				width: 86px;
+				/*设置每个li的宽度,高度已经继承了父元素ul*/
+				/*如何确定给多少宽度,总的950除11个列表项,得出86*/
+				line-height: 30px;
+				/*行高给的是父元素的30,这样字体就在中间了*/
+				text-align: center;
+				/*字体居中在每个li的小表格中间*/
+			}
+			
+			ul li a {
+				/*设置li里面的a标签*/
+				text-decoration: none;
+				/*去掉下划线*/
+				color: #FFFFFF;
+				/*设置字体颜色*/
+				/*font-family: "微软雅黑";*/
+				/*设置导航字体*/
+			}
+			
+			ul li a:hover {
+				color: #7FFFD4;
+			}
+			/*内容*/
+			
+			.nr {
+				width: 950px;
+				/* 和图片一致*/
+				margin: auto;
+				/*  居中*/
+				/*margin-top: 5px;*/
+				/*不需要设置内容框架往下移,下面会解决*/
+			}
+			
+			.zy {
+				width: 950px;
+				/*和图片宽度一致*/
+				height: 212px;
+				/*和图片高度一致*/
+				background: url(20180404中原诗词网/images/yc_tp.jpg);
+				/*				margin: auto;*/
+				/*看了视频发现多余的*/
+				margin: 5px 0 5px;
+				/*仅仅需要设置图片上面和下面的外边距即可,左右为0*/
+			}
+			
+			.bq {
+				width: 950px;
+				/*宽度是根据总体*/
+				height: 30px;
+				/* 高度也是*/
+				border: 1px solid #CCCCCC;
+				/* 搜索外面添加灰色的边框*/
+				/*margin: auto;*/
+				/*margin-top: 5px;*/
+				/* 上面图片已经设置了上下外边距,所以这里不需要了*/
+				color: #CCCCCC;
+				margin-bottom: 5px;           /* 新增*/
+			}
+			/*.sy {
+				line-height: 30px;
+				float: left;
+				margin-left: 5px;        下面偷懒用空格占位符代替了,我的天
+			}
+			
+			.sy a {
+				text-decoration: none;
+				color: #CCCCCC;
+			}*/
+			/*!!!!!!!!!!居然直接用全局span改????*/
+			
+			span {
+				color: #666666;
+				/* !!!!!字体深灰色*/
+				font-size: 13px;
+				/*!!!!!!!!字体大小大概13像素*/
+				line-height: 30px;
+				/*行高垂直居中*/
+				float: left;
+				/*向左浮动*/
+			}
+			/*!!!!搜索a链接改*/
+			
+			span a {
+				text-decoration: none;
+				color: #1F4612;
+				/*深绿色*/
+			}
+			/*.xz {
+				height: 30px;
+				float: right;
+				margin-right: 5px;
+			}
+			
+			.xz form {
+				margin: auto;
+			}
+			
+			.xz form select {
+				padding-bottom: 5px;
+				height: 21px;
+			}
+			*/
+			/*!!!!!!!!!!居然直接用全局form改????*/
+			
+			form {
+				/*border: 1px solid red; 左边顶格,右边空格*/
+				width: 280px;
+				/*表单宽度*/
+				float: right;
+				margin-top: 5px;
+				/*上面外边距添加5px距离*/
+			}
+			/*!!!!!!!!!!居然直接用全局select改????*/
+			
+			select {
+				border: 1px solid #CCCCCC;
+				/* 设置灰色边框*/
+				height: 20px;
+				/* 设置高度*/
+				/* 这里居然也要给浮动????????,给完浮动居然对平了我擦,.弄了很久,原来需要浮动才能平*/
+				float: left;
+			}
+			/*!!!!!属性选择符,将具有该属性的元素设置样式,比如title="www.baidu.com"等等*/
+			
+			input[type="text"] {
+				border: 1px solid #CCCCCC;
+				/* 设置灰色边框*/
+				/*!!!!!!!!!!!因为上下有一个像素点的边框,所以20-2=18高度,这样就持平了*/
+				height: 18px;
+				/* !!!!!设置18高度,居然还得考虑到边框的像素*/
+				/* 这里居然也要给浮动????????,给完浮动居然对平了我擦,.弄了很久,原来需要浮动才能平*/
+				float: left;
+				width: 130px;
+				/*!!!这里多个宽度   */
+			}
+			
+			input[type="image"] {
+				border: 0px solid #CCCCCC;
+				/* 设置灰色边框*/
+				height: 20px;
+				/* 设置高度*/
+				/* 这里居然也要给浮动????????,给完浮动居然对平了我擦,.弄了很久,原来需要浮动才能平*/
+				float: left;
+				width: 51px;
+				/*!!!设置为小搜索图片的宽度   */
+				background: url(20180404中原诗词网/images/serchbt2_03.jpg);
+				/*添加小搜索图片背景*/
+			}
+			/*!!!!!!!!!!!具体内容*/
+			
+			.jt {
+				width: 950px;
+				margin-bottom: 5px;
+				/*!!!!!!!!!!距离底部有5像素距离*/
+			}
+			
+			.sc {
+				height: 30px;
+				border-bottom: 1px dotted #666666;
+				/*给古代诗词加下边框虚线*/
+				line-height: 30px;
+				padding-left: 10px;
+				/*!!!!!!!!左边距加10*/
+				font-size: 14px;
+				/*!!!!!!!!!字体大小14*/
+				font-weight: bold;
+				/*!!!!!!!!!!!加粗*/
+			}
+			/*.sc img {
+				margin-top: 8px;
+				margin-left: 8px;
+			}*/
+			/*!!!!!!!!!!!!!!!!!!:before在元素之前添加内容,还可以插入一个图片*/
+			
+			.sc:before {
+				content: url(20180404中原诗词网/images/tle.jpg);
+			}
+			/*这是具体内容的*/
+			
+			.zb {
+				width: 693px;
+				height: 700px;
+				border: 1px solid #CCCCCC;
+				/*margin-top: 5px;*/
+				float: left;
+			}
+			/*这是排序方式那的*/
+			
+			.px {
+				/*margin-top: 5px;
+				margin-left: 8px;*/
+				font-weight: bold;
+				/*加粗*/
+				font-size: 14px;
+				/*字体大小*/
+				height: 30px;
+				line-height: 30px;
+				/* 行高*/
+				padding-left: 15px;
+				/* 左边内边距*/
+			}
+			
+			.px a {
+				text-decoration: none;
+				color: #666666;
+			}
+			
+			.px a:hover {
+				text-decoration: underline;
+			}
+			
+			.sc1 {
+				background: #F2F2F2;
+				/*单独给行设置格式*/
+				height: 30px;
+				font-size: 13px;
+				color: #666666;
+				text-align: center;
+			}
+			
+			.sc2 {
+				height: 30px;
+				font-size: 13px;
+				color: #666;
+				text-align: center;
+				border: 1px solid #ccc;
+			}
+			
+			.sc2 td {
+				border: 1px solid #ccc;
+			}
+			/*添加表格样式*/
+			
+			table {
+				width: 693px;
+				border-collapse: collapse;
+				/*属性设置表格的边框是否被合并为一个单一的边框*/
+			}
+			/*这个作废
+			 * .table1 table td {
+				border: 1px solid #CCCCCC;
+				text-align: center;
+			}*/
+			
+			.yb {
+				/*	border: 1px solid red;*/
+				width: 248px;
+				/*		height: 700px;*/
+				/*margin-top: 5px;*/
+				float: right;
+				margin-left: 5px;
+			}
+			
+			.ty {
+				border: 1px solid #CCCCCC;
+				height: 300px;
+				width: 248px;
+				/*新增*/
+				margin-bottom: 5px;
+				/* 新增*/
+			}
+			
+			.ty table {
+				/*width: 100%;*/
+				width:240px;
+				border-collapse:collapse;      /* 新增*/
+				margin: auto;               /* 新增*/
+			}
+			.ty table tr{
+				height: 30px;
+				line-height: 30px;
+				font-size: 13px;
+				color: #666;
+				border-bottom: 1px solid #ccc;
+			}
+			/*以下作废*/
+			/*.ty table td {
+				border-bottom: 1px solid #CCCCCC;
+				height: 29px;
+			}
+			
+			.ty table td span {
+				margin-left: 35px;
+			}
+			
+			.ty table td img {
+				margin-top: 5px;
+			}*/
+			
+			/*.cs {
+				color: #FFFFFF;
+				background: url(20180404中原诗词网/images/right_titBg.jpg);
+			}*/
+			.tjb{
+				width:248px;           /*右边宽度多少,我们就给多少*/
+				height: 30px;           /*高度30*/
+				/*加阴影,x轴0,y轴5像素,阴影宽度10px,阴影向内*/
+				box-shadow: 0px 5px 10px #CCCCCC inset;
+				/*添加下边框线*/
+				border-bottom: 1px solid #CCCCCC;
+			}
+			.tjl{
+				/*宽高是量的,颜色是吸出来的*/
+				width: 90px;                 
+				height: 30px;
+				background:#4B8437;        
+				color: #FFFFFF;
+				font-weight: bold;          /*字体加粗*/
+				margin-left: 20px;              /*距离左边20*/
+				line-height: 30px;            /*行高居中*/
+				font-size: 13px;            
+				text-align: center;          /* 字体居中*/
+				/*设置圆角 border-radius,这个是默认四个角*/
+				/*给左上角设置圆角*/
+				border-top-left-radius: 5px;
+				/*给右上角设置圆角*/
+				border-top-right-radius: 5px;
+			}
+			.db {
+				/*width: 950px;*/
+				width: 100%;         /* 新增*/
+				margin: auto;         /* 新增*/
+				border-top:5px solid #367A0B;             /* 新增*/
+			}
+			
+			/*.lx {
+				margin: auto;
+			}
+			
+			.lx a {
+				text-decoration: none;
+				color: #000000;
+			}*/
+	        p{font-size: 13px;text-align: center; }
+	        p a{color: #000;text-decoration: none;}
+	        p a:hover{color: #1F4612;}
+			.li:before{
+				content: url(20180404中原诗词网/images/zzzlRightBg2_10.jpg);
+			}
+		
+
+		</style>
+	</head>
+
+	<body>
+		<!--主体-->
+		<div class="zt">
+			<!--头部-->
+			<div class="tb">
+				<img src="20180404中原诗词网/images/logo.png" />
+				<div class="wb">
+					<a href="#">
+						登录
+					</a> |
+					<a href="#">
+						注册
+					</a>
+				</div>
+				<div class="clear"></div>
+				<!--注意清除浮动放的位置-->
+			</div>
+			<!--清除浮动不要放在两个主体间!!!!!!放在内部!!!!!-->
+			<!--导航-->
+			<div class="dh">
+				<ul>
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">古体诗词</a>
+					</li>
+					<li>
+						<a href="#">诗词大全</a>
+					</li>
+					<li>
+						<a href="#">诗韵墨香</a>
+					</li>
+					<li>
+						<a href="#">大河之南</a>
+					</li>
+					<li>
+						<a href="#">诗词专题</a>
+					</li>
+					<li>
+						<a href="#">天工妙对</a>
+					</li>
+					<li>
+						<a href="#">现代诗歌</a>
+					</li>
+					<li>
+						<a href="#">美文原创</a>
+					</li>
+					<li>
+						<a href="#">作者专栏</a>
+					</li>
+					<li>
+						<a href="#">今日更新</a>
+					</li>
+				</ul>
+				<div class="clear"></div>
+				<!--注意清除浮动放的位置-->
+			</div>
+			<!--内容可以分为三大块.一个是图片,一个是搜索,一个是具体内容-->
+			<div class="nr">
+				<!--大块1,图片-->
+				<div class="zy"></div>
+				<!--大块2,放搜索,做两个部分,一个是文字,一个是表单-->
+				<div class="bq">
+					<!--<div class="sy">
+						你现在所在的位置：
+						<a href="#">首页</a> 》古体诗词
+					</div>-->
+					<!--不需要用div包着,可以用span,左边的间距居然偷懒用空格占位符???-->
+					<span>
+						&nbsp;&nbsp;你现在所在的位置：<a href="#">首页</a> 》古体诗词
+					</span>
+					<!--<div class="xz">
+						<form action="#" method="post">
+							<select name="">
+								<option value="">
+									按作品标题
+								</option>
+								<option value="">
+									按作品标题
+								</option>
+								<option value="">
+									按作品标题
+								</option>
+							</select>
+							<input type="text" name="" id="" value="" size="15px" placeholder="请输入关键词" />
+							<input type="image" value="" src="20180404中原诗词网/images/serchbt2_03.jpg" />
+						</form>
+					</div>-->
+					<!--表单也不需要用div包着-->
+					<form action="#" method="post">
+						<select name="">
+							<option value="">
+								按作品标题
+							</option>
+							<option value="">
+								按作品标题
+							</option>
+							<option value="">
+								按作品标题
+							</option>
+						</select>
+						<!--添加提示信息placeholder-->
+						<input type="text" name="" id="" value="" placeholder="请输入关键词" />
+						<!--图片提交按钮-->
+						<input type="image" value="" />
+					</form>
+					<div class="clear"></div>
+				</div>
+				<!--具体内容分为两块-->
+				<div class="jt">
+
+					<div class="zb">
+						<!--以下内容其实也是table里的????-->
+						<!--<div class="sc">
+						<img src="20180404中原诗词网/images/tle.jpg" />古体诗词
+					</div>
+					<div class="px">
+						排序方式：
+						<a href="#"> 默认</a>
+						<a href="#"> 阅读</a>
+						<a href="#"> 评论</a>
+						<a href="#"> 推荐</a>
+					</div>-->
+						<!--					<div class="table1">不需要div包着-->
+						<!--样式可以在css里面设置-->
+						<!--<table cellspacing="0" width="100%" height="90px">
+							<tr bgcolor="#CCCCCC">
+
+								<th>标题 </th>              而且这里也错了
+								<th>作者</th>
+								<th>阅读</th>
+								<th>评论</th>
+								<th>发表时间</th>
+							</tr>
+							<tr>
+								<td>标题 </td>
+								<td>作者</td>
+								<td>阅读</td>
+								<td>评论</td>
+								<td>发表时间</td>
+							</tr>
+							<tr>
+								<td>标题 </td>
+								<td>作者</td>
+								<td>阅读</td>
+								<td>评论</td>
+								<td>发表时间</td>
+							</tr>
+						</table>-->
+						<!--					</div>-->
+						<table>
+							<!--给古体诗词这个表格增加边框线并且合并单元格-->
+							<tr>
+								<td colspan="5" class="sc"> 古体诗词</td>
+							</tr>
+							<tr>
+								<td colspan="5" class="px">
+									排序方式：
+									<a href="#"> 默认</a>
+									<a href="#"> 阅读</a>
+									<a href="#"> 评论</a>
+									<a href="#"> 推荐</a>
+								</td>
+							</tr>
+							<tr class="sc1">
+								<td>标题 </td>
+								<td>作者</td>
+								<td>阅读</td>
+								<td>评论</td>
+								<td>发表时间</td>
+							</tr>
+							<tr class="sc2">
+								<td>标题 </td>
+								<td>作者</td>
+								<td>阅读</td>
+								<td>评论</td>
+								<td>发表时间</td>
+							</tr>
+							<tr class="sc2">
+								<td>标题 </td>
+								<td>作者</td>
+								<td>阅读</td>
+								<td>评论</td>
+								<td>发表时间</td>
+							</tr>
+
+							<!--	我擦,连跳转都是图片-->
+							<tr>
+								<td colspan="5"><img src="20180404中原诗词网/images/fenye.png" style="margin-left: 50px;" /></td>
+							</tr>
+						</table>
+					</div>
+					<div class="yb">
+						<div class="ty">
+							<!--我擦,我还以为这个是图片,原来是写出来的-->
+							<!--嵌套了两个div,第一个是灰色背景,第二个是绿色的-->
+							<div class="tjb" >
+								<div class="tjl">推荐排行</div>
+							</div>
+
+							<table>
+								<!--<tr>
+								推荐排行不在table里
+								<td class="cs">
+									<span>
+									推荐排行
+								</span>
+								</td>
+							</tr>-->
+								<tr>
+									<!--<td><img src="20180404中原诗词网/images/zzzlRightBg2_10.jpg" />童年记忆.夏日游泳 中一</td>-->
+								<td class="li">&nbsp; 童年记忆.夏日游泳</td><td>中一</td>
+								</tr>
+								<tr>
+									
+										<td class="li">&nbsp; 童年记忆.夏日游泳</td><td >中一</td>
+									<!--<td><img src="20180404中原诗词网/images/zzzlRightBg2_10.jpg" />童年记忆.夏日游泳 中一</td>-->
+								</tr>
+								<tr>
+									<td class="li">&nbsp; 童年记忆.夏日游泳</td><td>中一</td>
+									<!--<td><img src="20180404中原诗词网/images/zzzlRightBg2_10.jpg" />童年记忆.夏日游泳 中一</td>-->
+								</tr>
+							</table>
+						</div>
+						<div class="ty">
+							<!--我擦,我还以为这个是图片,原来是写出来的-->
+							<div class="tjb">
+								<div class="tjl">推荐排行</div>
+							</div>
+
+							<table>
+								<!--<tr>
+								推荐排行不在table里
+								<td class="cs">
+									<span>
+									推荐排行
+								</span>
+								</td>
+							</tr>-->
+								<tr>
+									<td class="li">&nbsp; 童年记忆.夏日游泳</td><td>中一</td>
+									<!--<td><img src="20180404中原诗词网/images/zzzlRightBg2_10.jpg" />童年记忆.夏日游泳 中一</td>-->
+								</tr>
+								<tr>
+									<td class="li">&nbsp; 童年记忆.夏日游泳</td><td>中一</td>
+									<!--<td><img src="20180404中原诗词网/images/zzzlRightBg2_10.jpg" />童年记忆.夏日游泳 中一</td>-->
+								</tr>
+								<tr>
+									<td class="li">&nbsp; 童年记忆.夏日游泳</td><td>中一</td>
+									<!--<td><img src="20180404中原诗词网/images/zzzlRightBg2_10.jpg" />童年记忆.夏日游泳 中一</td>-->
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<!--<hr style="width: 100%; height: 1px; margin-top: 5px;" />-->
+			<!--底部之所以有像水平线一样的东西,是因为用了border-bottom-->
+			<div class="db">
+				<!--<div class="lx" align="center">多余的-->
+					<!--一个p标签包完!!!!!!!!!!!!这个没想到!!!!!!!!-->
+					<p>              
+					<a href="#">
+						关于诗词网
+					</a> |
+					<a href="#">
+						联系我们
+					</a> |
+					<a href="#">
+						帮助中心
+					</a> |
+					<a href="#">
+						意见反馈
+					</a> |
+					<a href="#">
+						网站地图
+					</a> |
+					<a href="#">
+						合作伙伴
+					</a> |
+					<a href="#">
+						网站动态
+					</a> |
+					<a href="#">
+						法律法规
+					</a> |
+					<a href="#">
+						管理登录
+					</a><br>
+				<!--</div>-->
+
+				COPYRIGHT 2003-2018,POETIC.COM.CN,All Rights Reserved<br>
+				版权所有:中原诗词网 邮箱: web@poetic.com.cn</p>
+			</div>
+		</div>
+
+	</body>
+
+</html>

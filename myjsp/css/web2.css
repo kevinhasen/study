@@ -1,0 +1,71 @@
+body {
+    font-family: "微软雅黑";
+    background: #fffff3;
+}
+/*设置蓝色条纹线*/
+.header-line {
+    width: 100%;
+    height: 4px;
+    background: #0dbfdd;
+}
+/*文本对齐为居中*/
+.content {
+    width: 40%;
+    margin: 80px auto 0;
+    text-align: center;
+}
+/*字体设置*/
+.content-title {
+    margin: 10px 0 25px 0;
+    font-size: 2em;
+    color: #747474;
+    font-weight: normal;
+}
+/*设置子元素*/
+.content-form {
+    width: 100%;
+    padding: 10px 0 20px;
+}
+/*下外边距*/
+.content-form form div {
+    margin-bottom: 18px;
+}
+/*设置子元素孙类*/
+.content-form form .kuang{
+    width: 80%;
+    height: 20px;
+    padding: 15px;
+    font-size: 1em;
+    border: 1px solid  #cccbcb;
+    border-radius: 8px;
+    letter-spacing: 2px;
+}
+/*加入轮廓蓝色*/
+.content-form form input:focus {
+    outline: none;
+    -webkit-box-shadow: 0 0 5px #0dbfdd;
+    box-shadow: 0 0 5px #0dbfdd;
+}
+/*鼠标样式*/
+.content-form-signup {
+    width: 85%;
+    margin: 2px auto;
+    padding: 10px;
+    border: 1px solid  #cccbcb;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background: #0dbfdd;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+/*链接样式*/
+.content-login-link {
+    left: 100px;
+    right: 100px;
+    font-size: 15px;
+    color: #0dbfdd;
+    text-decoration: none;
+    letter-spacing: 2px;
+}

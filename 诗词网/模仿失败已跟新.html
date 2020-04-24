@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<table border="0" cellspacing="0" cellpadding="" align="center" background="images/bj5.png" width="480px" height="700px">
+			<tr>
+				<td>
+					<!--我的失误在没有在一行一列里面放form,没有设置cellpadding让字体和边框有像素的边距,没有想到把他们
+						放到单独的一行,也就是要十行,
+						文本域没想到cols给50个字符,4行,而且错误的给中文添加br
+						下面的提交居中在td里面居中,错误的设置在input里
+					-->
+					<!--<td>我的注册页面<br />-->
+					<form action="#" method="post">
+						<!--姓名:<input type="text" name="" id="" value="" placeholder="请使用6到8个中文字符" /><br />
+			密码:<input type="password" name="" id="" value="" placeholder="请输入数字6~8位"/><br />
+			性别:<input type="radio" name="sex" id="" value="男" />男
+			<input type="radio" name="sex" id="sex" value="女" />女
+			<input type="radio" name="sex" id="sex" value="保密" checked="checked"/>保密<br />
+			生日:<input type="date" name="" id="" value="" /><br />
+			爱好:<input type="checkbox" name="game" id="" value="游戏" />游戏
+			<input type="checkbox" value="看书"/>看书
+			<input type="checkbox" value="旅游"/>旅游
+			<input type="checkbox" value="运动" checked="checked"/>运动
+			<input type="checkbox" value="吃货"/>吃货
+			<input type="checkbox" value="购物"/>购物<br />
+			星座:<select name="">
+				<option value="摩羯座">摩羯座</option>
+				<option value="天蝎座">天蝎座</option>
+				<option value="水平座">水平座</option>
+				<option value="处女座">处女座</option>
+				<option value="双子座">双子座</option>
+				<option value="天秤座">天秤座</option>
+			</select><br />
+			邮件:<input type="email" name="" id="" value="" /><br />
+			我说:<br /><textarea name="" rows="" cols="" placeholder="简单介绍一下自己........"></textarea>
+			<br />
+			<input type="submit" value="提交" align="center"/>-->
+						<table border="0" cellspacing="0" cellpadding="6px" width="400px" height="550px" align="center">
+							<tr height="80px">
+								<th>我的注册页面,cellpadding让字体和边框有6像素的边距</th>
+							</tr>
+							<tr>
+								<td>姓名:<input type="text" name="" id="" value="" placeholder="请使用6到8个中文字符" maxlength="8" /></td>
+							</tr>
+							<tr>
+								<td>密码:<input type="password" name="" id="" value="" placeholder="请输入数字6~8位" maxlength="8" /></td>
+							</tr>
+							<tr>
+								<td>性别:<input type="radio" name="sex" id="" value="男" />男
+									<input type="radio" name="sex" id="sex" value="女" />女
+									<input type="radio" name="sex" id="sex" value="保密" checked="checked" />保密</td>
+							</tr>
+							<tr>
+								<td>生日:<input type="date" name="" id="" value="" /></td>
+							</tr>
+							<tr>
+								<td>爱好:
+			<input type="checkbox" name="game" id="" value="游戏" />游戏
+			<input type="checkbox" value="看书"/>看书
+			<input type="checkbox" value="旅游"/>旅游
+			<input type="checkbox" value="运动" checked="checked"/>运动
+			<input type="checkbox" value="吃货"/>吃货
+			<input type="checkbox" value="购物"/>购物</td>
+							</tr>
+							<tr>
+								<td>星座:
+				<select name="">
+				<option value="摩羯座">摩羯座</option>
+				<option value="天蝎座">天蝎座</option>
+				<option value="水平座">水平座</option>
+				<option value="处女座">处女座</option>
+				<option value="双子座">双子座</option>
+				<option value="天秤座">天秤座</option>
+			</select></td>
+							</tr>
+							<tr>
+								<td>邮件:<input type="email" name="" id="" value="" /></td>
+							</tr>
+							<tr>
+								<td>我说:<textarea name="" rows="4" cols="50" placeholder="cols给50个字符,4行,下面的提交居中在td里面居中,"></textarea></td>
+							</tr>
+							<tr>
+								<td align="center"><input type="submit" value="提交" /></td>
+							</tr>
+
+						</table>
+					</form>
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

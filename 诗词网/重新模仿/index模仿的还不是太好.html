@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>模仿表单列表</title>
+    <style type="text/css">
+        .zt{
+            width: 480px;
+            height: 700px;
+            background: url(images/bj5.png);
+            margin: auto;
+        }
+        table{
+            padding-top: 100px;
+            /*border: 1px solid red;*/
+            margin:auto;
+            width: 400px;
+            height: 550px;
+        }
+        form{
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+<div class="zt">
+    <form action="#" method="post">
+<!--        cellpadding字体和边框有像素距离!!!很重要,没想到-->
+        <table cellpadding="6">
+            <tr><td align="center" >
+                <b>我的注册页面</b>
+            </td></tr>
+            <tr><td>
+                姓名:<input type="text" name="" placeholder="请输入6到8个字符" maxlength="8">
+            </td></tr>
+            <tr><td>
+                密码:<input type="password" name="" placeholder="请输入6到8个字符" maxlength="8">
+            </td></tr>
+            <tr><td>
+                性别:<input type="radio" value="nan">男
+                <input type="radio" value="nv">女
+                <input type="radio" value="bm" checked="checked">保密
+<!--                是checked="checked" 不是checked!!!!!-->
+            </td></tr>
+            <tr><td>
+                生日: <input type="date">
+            </td></tr>
+            <tr><td>
+                爱好: <input type="checkbox">
+                爱好: <input type="checkbox">
+                爱好: <input type="checkbox">
+                爱好: <input type="checkbox">
+                爱好: <input type="checkbox" checked>
+                爱好: <input type="checkbox">
+            </td></tr>
+            <tr><td>
+                星座: <select name="" id="">
+                <option value="摩羯座">摩羯座</option>
+                <option value="摩羯座">摩羯座</option>
+                <option value="摩羯座">摩羯座</option>
+                <option value="摩羯座">摩羯座</option>
+            </select>
+            </td></tr>
+            <tr><td>
+                邮件: <input type="email">
+            </td></tr>
+            <tr><td>
+                我说: <br>
+                <textarea name="" id="" cols="50" rows="4">
+            </textarea>
+            </td></tr>
+            <tr>
+                <td align="center"><input type="submit" value="提交"></td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+</body>
+</html>

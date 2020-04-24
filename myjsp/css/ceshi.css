@@ -1,0 +1,192 @@
+* { margin: 0; padding: 0; }
+html { height: 100%; }
+body { height: 100%; background: #fff url(../images/beijing.jpg) 50% 50% no-repeat; background-size: cover;}
+.dowebok { position: absolute; left: 50%; top: 50%; width: 430px; height: 550px; margin: -300px 0 0 -215px; border: 1px solid #fff; border-radius: 20px; overflow: hidden;cursor:pointer;}
+.logo { width: 104px; height: 104px; margin: 50px auto 30px; background: url(../images/login.png) 0 0 no-repeat; }
+.form-item { position: relative; width: 360px; margin: 0 auto; padding-bottom: 30px;}
+.form-item input { width: 288px; height: 48px; padding-left: 70px; border: 1px solid #fff; border-radius: 25px; font-size: 18px; color: #fff; background-color: transparent; outline: none;}
+.form-item button { width: 360px; height: 50px; border: 0; border-radius: 25px; font-size: 18px; color: #1f6f4a; outline: none; cursor: pointer; background-color: #fff; }
+#username { background: url(../images/yonghu1.png) 20px 14px no-repeat; }
+#username1 { background: url(../images/yonghu1.png) 20px 14px no-repeat; }
+#username2 { background: url(../images/yonghu1.png) 20px 14px no-repeat; }
+#mm{background: url(../images/password.png) 23px 11px no-repeat;}
+#mm1{background: url(../images/password.png) 23px 11px no-repeat;}
+/*#xm{background: url(../images/xm1.png) 23px 11px no-repeat;}*/
+/*#zy{background: url(../images/zy.png) 23px 11px no-repeat;}*/
+.dowebok ::-webkit-input-placeholder { font-size: 18px; line-height: 1.4; color: black;}
+/* 模态框（背景） */
+.modal {
+    display: none; /* 默认隐藏 */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* 如果需要允许滚动 */
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 180px;
+}
+/* 模态框内容样式*/
+.modal-content {
+
+    background: #fff url(../images/beijing.jpg) 50% 50% no-repeat;
+    background-size: cover;
+    margin: 5px auto;
+    border: 1px solid #888;
+    position: relative;
+    width: 480px;
+    padding-bottom: 30px;
+}
+
+
+
+/* 关闭按钮 */
+.close {
+    /* 置于模态框外侧右上角 */
+    position: absolute;
+    right: 50px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+/* 鼠标滑过样式 */
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+/* 添加缩放动画 */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+.login-wrap{
+    width:100%;
+    margin:auto;
+    max-width:525px;
+    min-height:530px;
+    position:relative;
+}
+.login-html{
+    width:100%;
+    height:100%;
+    position:absolute;
+    padding:60px 20px 20px 20px;
+}
+.login-html .sign-in-htm,
+.login-html .sign-up-htm{
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    position:absolute;
+    -webkit-transform:rotateY(180deg);
+    transform:rotateY(180deg);
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
+    -webkit-transition:all .4s linear;
+    transition:all .4s linear;
+}
+.login-html .sign-in,
+.login-html .sign-up{
+    display:none;
+}
+.login-html .tab{
+    text-transform:uppercase;
+}
+.login-html .tab{
+    font-size:22px;
+    margin-right:15px;
+    padding-bottom:5px;
+    margin:30px 22px 30px 90px;
+    display:inline-block;
+    border-bottom:2px solid transparent;
+    cursor:pointer;
+}
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab{
+    color:#fff;
+    border-color:black;
+}
+.login-form{
+    min-height:345px;
+    position:relative;
+    perspective:1000px;
+    transform-style:preserve-3d;
+}
+.login-form .group input[data-type="password"]{
+    text-security:circle;
+    -webkit-text-security:circle;
+}
+
+.login-form .group .check:checked + label{
+    color:#fff;
+}
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+    -webkit-transform:rotate(0);
+    -ms-transform:rotate(0);
+    transform:rotate(0);
+}
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
+    -webkit-transform:rotate(0);
+    -ms-transform:rotate(0);
+    transform:rotate(0);
+}
+
+.hr{
+    height:2px;
+    margin:45px 0 45px 0;
+    background:rgba(255,255,255,.2);
+}
+/* Border styles */
+#table-3 thead, #table-3 tr {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(235, 242, 224);
+}
+#table-3 {
+    margin: auto;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(235, 242, 224);
+}
+
+/* Padding and font style */
+#table-3 td, #table-3 th {
+    padding: 5px 10px;
+    font-size: 20px;
+    font-family: Verdana;
+    color: rgb(149, 170, 109);
+}
+
+/* Alternating background colors */
+#table-3 tr:nth-child(even) {
+    background: rgb(230, 238, 214)
+}
+#table-3 tr:nth-child(odd) {
+    background: #FFF
+}

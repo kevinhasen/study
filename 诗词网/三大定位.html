@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS定位</title>
+		<style type="text/css">
+			/*如果设置了初始化为0,则列表的点会不见*/
+			/** {
+				margin: 0px;
+				padding: 0px;
+			}*/
+			/*.d1{
+				width: 200px;
+				height: 200px;
+				border: 2px solid red;
+				position: relative;        /*  单独使用这个没有效果,得配合位移*/
+			/*top 设为负20px和直接设置为bottom 20px效果是一样的*/
+			/*top: 20px;     */
+			/*位移方向是相对于之前的位置本身*/
+			/*left: 20px;                      /* 可以为负值*/
+			/*bottom: 5px;*/
+			/*}*/
+			/*.d2{
+				width: 400px;
+				height: 400px;
+				border: 2px solid red;
+				position: relative;        /*  父元素给一个相对定位*/
+			/*top: 20px; 
+				left: 20px; 
+				background: red;*/
+			/*	}*/
+			/*.d3{
+				width: 200px;
+				height: 200px;
+				border: 2px solid blue;
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				background: blue;
+				z-index: -1;
+			}*/
+			/*.d4{
+				width: 100px;
+				height: 100px;
+				border: 2px solid red;
+				position:absolute; 
+				top: 10px;
+				left: 10px;
+				 width: 100px;
+				  height: 100px;
+			}*/
+			
+			.e1 {
+				width: 400px;
+				/*没有设置高度,高度是由里面的元素撑开的*/
+				border: 2px solid red;
+			}
+			
+			.e2 {
+				width: 200px;
+				height: 200px;
+				background: blue;
+				color: #FFFFFF;
+				float: left;
+				/*当元素使用浮动的时候,不在普通流中,其他元素就会占用它的位置;*/
+			}
+			
+			.e3 {
+				width: 100px;
+				height: 200px;
+				background: green;
+				color: #FFFFFF;
+				float: left;
+				/* 浮动元素脱离文档普通流,不占空间*/
+			}
+			
+			li {
+				width: 100px;                        /* 导航条宽高*/
+				/*height: 40px;*/
+				border: 1px solid #CCCCCC;               /* 导航条边框*/
+				list-style: none;                       /*去掉导航条前面的标志  */
+				float: left;                          /*  设置浮动左边*/
+				line-height: 40px;                        /*设置行高*/
+				color: #FFFFFF;                           /* 字体颜色*/
+				background: pink;                             /* 背景颜色*/
+				text-align: center;                             /*  字体居中*/
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<h1>css相对定位</h1>
+		<p>相对定位原来所占的空间仍然保留,覆盖其他的元素</p>
+		<div class="d1">position: relative; 单独使用这个没有效果,得配合位移,位移方向是相对于之前的位置本身,</div><br />
+		<h1>css绝对定位</h1>
+		<p>绝对定位默认左上角,如果有父级元素(必须是已经定过位的),则在父级元素左上角</p>
+		<p>它和普通流没有任何关系,所以可以放在文档中的任何位置(其实就是覆盖掉),甚至可以超出父元素的位置!!!</p>
+		<p>z-index可以控制堆放顺序,负值则在下,正值在上,只能使用在定位元素才有效果!!!</p>
+		<div class="d2">
+			<div class="d3">position: absolute绝对定位位置是相对于离它最近的已经定位的父级元素或者是初始包含块定位(body)</div>
+		</div>
+		<!--<div id="">
+			<div class="d4">
+			ceshi
+		</div>
+		</div>-->
+		<p>块级元素默认是从上到下排序</p>
+		<h1>css浮动定位</h1>
+		<p>浮动框可以向左或者向右移动,直到它的边缘碰到包含框或者另一个浮动框的边框为止,</p>
+		<p>以下如果两个都设置了浮动,父级e1就不会被撑开,浮动元素脱离文档普通流,不占空间,就好像里面没东西一样,导致布局乱掉</p>
+		<p>clear清除浮动,规定了元素哪一侧不允许其它浮动元素,left,right,both(指两边都清除,通常使用这个)</p>
+		<p>清除的时候需要在当前div创建一个空的div,我们用于清除</p>
+		<p>浮动的属性虽然方便使用，但是在使用这种属性时，也存在着一种弊端，
+			那就是当子元素设置了float属性之后，且父元素的高度和宽度没有进行设置，
+			而是由子元素支撑起来，则会导致父元素的高度塌陷(原本的height后来被置为0)
+			所以需要清除浮动
+		</p>
+		<div class="e1">
+			<div class="e2">浮动1</div>
+			<div class="e3">浮动2</div>
+			<div style="clear: both"></div>
+		</div>
+		<h1>用浮动做一个导航条</h1>
+		<ul>
+			<li>a</li>
+			<li>b</li>
+			<li>c</li>
+			<li>d</li>
+		</ul>
+	</body>
+
+</html>
