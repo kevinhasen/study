@@ -1,0 +1,50 @@
+/***********
+样式3的想法是,把内容分为两部分,最上面和下面,
+最下面用div包住,设置清除浮动,最下面又分为,左边float部分和右边字体部分
+***************/
+
+/* 去掉默认样式*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 为了最上面 定制*/
+.left{
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    background-color: rgb(133,133,133);
+}
+/*  此类只为加粗使用 */
+.cu{
+    font-weight: bold;
+}
+/* 简历二字特定 */
+.t1{
+    font-size: 20px;
+    padding: 8px 16px;
+    color: white;
+}
+/* 最左边表格专用*/
+.t2{
+    width: 120px;
+    height: 100px;
+    float: left;
+    text-align: center;
+    background-color: rgb(214,214,214);
+}
+/* 每行用此类包裹内容 */
+.t3{
+    overflow: hidden;  /*清除浮动*/
+    border-bottom: 1px solid gray;  /* 每行下面添加边框线 */
+}
+/*  最左边div专用,可以设置大小还有行高居中 */
+.t4{
+    font-size: 20px;
+    line-height: 100px;
+}
+/* 此类包裹了span文字,专用来设置内边距 */
+.t5{
+    margin-left: 130px;
+    margin-top: 10px;
+}

@@ -1,0 +1,20 @@
+/*  此类只为标题使用 */
+.cu{
+    font-weight: bold;
+}
+/* 设置为块,这样就可以自带回车了 */
+.block1{
+    display: block;
+}
+/* 专为边距而用 */
+.t5{
+    padding: 10px 1px;
+}
+/* 此类只为标题而用 */
+.t2{
+    font-size: 30px;
+}
+/* 用于标题设置大小 */
+.t1{
+    font-size: 30px;
+}

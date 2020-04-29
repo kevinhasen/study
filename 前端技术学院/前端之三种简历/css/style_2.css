@@ -1,0 +1,46 @@
+/***********
+样式2的想法是,把内容分为两部分,最左边和右边,
+左浮动(width+float),右边设置margin-left,防止高度坍塌,主体设置清除浮动
+***************/
+
+/* 主体防止高度坍塌所以清除浮动 */
+.box{
+    overflow: hidden;  /*清除浮动*/
+}
+
+/* 左浮动 */
+.left{
+    background-color: rgb(101,165,250);
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    float: left;
+}
+/*  margin-left,右边即可自适应 */
+.right{
+    margin-left: 230px;
+}
+/* 专为左边简历二字定制 */
+.t1{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+/* 此类只为标题而用 */
+.t2{
+    font-size: 30px;
+}
+/*  此类只为加粗使用 */
+.cu{
+    font-weight: bold;
+}
+/* 设置为块,这样就可以自带回车了 */
+.block1{
+    display: block;
+}
+/* 专为边距而用 */
+.t5{
+    padding: 10px 1px;
+}
