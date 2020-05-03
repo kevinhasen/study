@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        /*使用浮动实现*/
+        /*#left{*/
+        /*    float: right;*/
+        /*    width: 300px;*/
+
+        /*    background-color: lightpink;*/
+        /*}*/
+        /*#right{*/
+        /*    margin-right: 300px;*/
+        /*    background-color:lightgreen;*/
+        /*}*/
+        /*.flx{*/
+        /*    overflow: hidden;*/
+        /*}*/
+        /*使用Position实现*/
+        /*#left{*/
+        /*    position: absolute;*/
+        /*    !* 自动计算左边的宽度*!*/
+        /*    width: calc(100% - 300px);*/
+        /*    background-color: lightpink;*/
+        /*}*/
+        /*#right{*/
+        /*        width: 300px;*/
+        /*        position: absolute;*/
+        /*        right: 0;*/
+        /*        background-color:lightgreen;*/
+        /*}*/
+        /*使用Flexbox实现*/
+        .flx{
+            display: flex;
+        }
+        #left{
+            flex: 1;
+
+            background-color: lightpink;
+        }
+        #right{
+            width: 300px;
+            background-color:lightgreen;
+        }
+    </style>
+</head>
+<body>
+<p>实现一个两栏布局，右侧固定宽度，左侧根据浏览器宽度进行自适应变化</p>
+<div class="flx">
+    <div id="left">
+        不分左右
+    </div>
+    <div id="right">
+        不分左右
+    </div>
+</div>
+</body>
+</html>

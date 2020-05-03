@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        /*使用浮动实现,问题开始慢慢显示,*/
+        /*问题1,html是按顺序熏染,如果content先染则会占据一行,浮动元素不会上去*/
+        /*所以先熏染左边,在右边,中间留位置空上去*/
+        /*#left{*/
+        /*    float: left;*/
+        /*    width: 300px;*/
+        /*    background-color: lightpink;*/
+        /*}*/
+        /*#right{*/
+        /*   float: right;*/
+        /*    width: 300px;*/
+        /*    background-color:lightgreen;*/
+        /*}*/
+        /*#middle {*/
+        /*    margin-left: 300px;*/
+        /*    margin-right: 300px;*/
+        /*    background-color: skyblue;*/
+        /*}*/
+        /*.flx{*/
+        /*    overflow: hidden;*/
+        /*}*/
+        /*使用Position实现*/
+        /*#left{*/
+        /*    width: 300px;*/
+        /*    position: absolute;*/
+        /*    left: 0;*/
+        /*    background-color:lightgreen;*/
+
+        /*}*/
+        /*#right{*/
+        /*        width: 300px;*/
+        /*        position: absolute;*/
+        /*        right: 0;*/
+        /*        background-color:lightgreen;*/
+        /*}*/
+        /*#middle{*/
+        /*    margin-right: 300px;*/
+        /*    margin-left: 300px;*/
+        /*    background-color: lightpink;*/
+        /*}*/
+        /*使用Flexbox实现*/
+        .flx{
+            display: flex;
+        }
+        #left{
+            width: 300px;
+            order: 1;
+            background-color: lightpink;
+        }
+        #right{
+            width: 300px;
+            background-color:lightgreen;
+        }
+        #middle{
+            flex: 1;
+            order: 0;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<p>实现一个三栏布局，左侧固定宽度，右侧固定宽度，中间部分宽度随浏览器宽度变化而自适应变化</p>
+<div class="flx">
+
+    <div id="left">
+        这是左边
+    </div>
+    <div id="right">
+        这是右边
+    </div>
+    <div id="middle">
+        这是中间
+    </div>
+</div>
+</body>
+</html>

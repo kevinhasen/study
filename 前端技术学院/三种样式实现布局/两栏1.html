@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        /*使用浮动实现*/
+        /*#left{*/
+        /*    float: left;*/
+        /*    width: 30%;*/
+        /*    background-color: lightpink;*/
+        /*}*/
+        /*#right{*/
+        /*    float: right;*/
+        /*    width: 70%;*/
+        /*    background-color:lightgreen;*/
+        /*}*/
+        /*使用Position实现*/
+        /*#left{*/
+        /*    width: 30%;*/
+        /*    left: 0;*/
+        /*    position: absolute;*/
+        /*    background-color: lightpink;*/
+        /*}*/
+        /*#right{*/
+        /*        width: 70%;*/
+        /*        right:0 ;*/
+        /*        position: absolute;*/
+        /*        background-color:lightgreen;*/
+        /*}*/
+        /*使用Flexbox实现*/
+        .flx{
+            display: flex;
+        }
+        #left{
+                width: 30%;
+                background-color: lightpink;
+        }
+        #right{
+                width: 70%;
+                background-color:lightgreen;
+        }
+    </style>
+</head>
+<body>
+<p>实现一个两栏布局，左侧占30%宽度，右侧占70%宽度</p>
+<div class="flx">
+    <div id="left">
+        这是左边
+    </div>
+    <div id="right">
+        这是右边
+    </div>
+</div>
+</body>
+</html>
