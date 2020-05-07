@@ -1,0 +1,342 @@
+/*reset*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-width: 1000px;
+}
+.flex{
+    display: flex;
+    flex-flow: column;
+}
+.warp{
+    margin: 0 auto;
+    width: 970px;
+}
+.gray{
+    color: rgb(187,183,180);
+}
+/*header style*/
+header{
+    color: white;
+    width: 100%;
+    height: 990px;
+    text-align: center;
+    background: url("http://wl.leafsir.cn/image/baiduback1.jpg") no-repeat center;
+    background-size: cover;
+}
+header h1{
+    position: relative;
+    top: 170px;
+    font-size: 60px;
+}
+header h3{
+    letter-spacing: 1px;
+    position: relative;
+    top: 300px;
+}
+#header-box{
+    border: 1px solid rgb(89,85,82);
+    position: relative;
+    top: 380px;
+    padding: 70px 10px;
+}
+#header-box h4{
+    letter-spacing: 2px;
+}
+#header-box h6{
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+#header-box form{
+    margin-top: 50px;
+
+}
+#header-box .text{
+    background-color:transparent;
+    border: 1px solid rgb(89,85,82);
+    width: 290px;
+    height: 50px;
+    caret-color:white;
+    padding: 0 20px;
+    margin-left: 30px;
+    color: white;
+}
+#header-box .bottom{
+    width: 130px;
+    height: 50px ;
+    margin-left: 30px;
+}
+
+/*style section*/
+#section1{
+    padding: 100px 0;
+}
+#section1 h6{
+    letter-spacing: 2px;
+    text-align: center;
+}
+#section1 h1{
+    letter-spacing: 3px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+#section1 div{
+    flex-basis: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+#section-box{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+#section-box strong{
+    display: inline-block;
+    margin-bottom: 10px;
+}
+#section-box span{
+    display:inline-block ;
+    width: 370px;
+}
+#section1  .ima{
+     margin-left: 5em;
+     margin-right: 2em;
+ }
+#section1 p{
+    flex: 1;
+}
+/*section2 style*/
+#section2{
+    color: white;
+    width: 100%;
+    height: 800px;
+    background: url("http://wl.leafsir.cn/image/baiduback2.jpg") no-repeat center;
+    background-size: cover;
+}
+#section2-box{
+    position: relative;
+    top: 220px;
+}
+#section2 h1{
+    letter-spacing: 3px;
+    font-size: 30px;
+    width: 350px;
+}
+#section2 h4{
+    margin-top: 30px;
+    width: 360px;
+    line-height: 30px;
+    margin-bottom: 60px;
+}
+#section2 button{
+    padding: 20px 40px;
+}
+#section2 .section-button{
+   padding: 20px 40px;
+    background-color: transparent;
+    border: 1px solid grey;
+    color: white;
+}
+/*section3 style*/
+#section3{
+    text-align: center;
+    padding: 100px;
+}
+#section3-box{
+    display: flex;
+    margin-top: 100px;
+}
+#section3-box span{
+    display: inline-block;
+    width: 270px ;
+}
+/*section4 style*/
+#section4{
+    border-top: 1px solid rgb(242,242,242);
+    border-bottom: 1px solid rgb(242,242,242);
+    padding: 100px;
+}
+#section4 strong{
+    display: inline-block;
+    width: 280px;
+    margin-top: 80px;
+}
+#section4 span{
+    margin-top: 50px;
+    display: inline-block;
+    flex: 1;
+    width: 310px;
+}
+.section4-top{
+    display: flex;
+    align-items: flex-start;
+}
+.section4-top img{
+    margin-right: 5em;
+}
+.section4-bottom{
+    display: flex;
+    margin-top: 80px;
+    align-items: flex-start;
+}
+.section4-bottom img{
+    margin-left: 5em;
+}
+/*section5 style*/
+#section5{
+    padding: 120px;
+    text-align: center;
+}
+#section5 h1{
+    font-size: 40px;
+}
+#section5 span{
+    display: inline-block;
+    width: 630px;
+    margin: 50px;
+}
+#section5-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.section5-td{
+    flex: 0 0 470px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+}
+#section5-box img{
+    height: 100%;
+}
+.section5-td2{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+}
+.section5-td:hover .section5-td2{
+    opacity: .7;
+    background-color: rgba(0, 0, 0, .7);
+    transition: all .5s;
+}
+.section5-td2 h4 {
+    margin: 110px 0 20px 0;
+    color: #fff;
+}
+
+.section5-td2 p {
+    color: #8a8a8a;
+}
+
+.section5-td2 ul {
+    margin-top: 40px;
+    list-style: none;
+}
+
+.section5-td2 li {
+    display: inline-block;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 0 10px;
+}
+/*section6 style*/
+#section6{
+    padding: 70px;
+    border-top: 1px solid rgb(242,242,242);
+}
+#section6-box{
+    display: flex;
+}
+#section6-box .left{
+    width: 470px;
+    text-align: center;
+    padding: 50px;
+    border: 1px solid rgb(242,242,242);
+}
+#section6-box input{
+    width: 370px;
+    height: 50px;
+    margin-top: 30px;
+    padding: 0 20px;
+    border: 1px solid rgb(242,242,242);
+}
+#section6-box textarea{
+    padding: 0 20px;
+    margin-top: 30px;
+    border: 1px solid rgb(242,242,242);
+    resize:none;
+}
+#section6-box input:nth-of-type(3){
+    color: white;
+    background-color: black;
+}
+#section6-box .right{
+    /*background-color: lightyellow;*/
+    /*width: 470px;*/
+    padding: 80px 1px 80px 70px;
+}
+#section6-box .right h1{
+    letter-spacing: 2px;
+    font-size: 30px;
+}
+#section6-box .right h4{
+    margin-top: 20px;
+    color: grey;
+    margin-bottom: 60px;
+}
+
+.section6-icon{
+    display: flex;
+    align-items: flex-start;
+    margin: 40px 0;
+}
+.section6-icon img{
+    margin-right: 1em;
+}
+.section6-icon p{
+    flex: 1;
+}
+/*footer style*/
+footer{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+    color: white;
+}
+footer a{
+    color: grey;
+    text-decoration: none;
+}
+footer ul{
+    list-style: none;
+}
+footer li{
+    display: block;
+    margin: 20px 0;
+}
+footer p{
+    color: grey;
+    display: inline-block;
+    width: 250px;
+    margin: 30px 0;
+}
+footer nav a{
+    display: inline-block;
+    margin-left: 15px;
+}
