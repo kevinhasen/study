@@ -1,0 +1,421 @@
+/*全局继承ie模式*/
+*, *:before, *:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#box{
+    display: flex;
+
+}
+.clear:after{
+    content: '';
+    display: table;
+    clear: both;
+}
+ul{
+    list-style-type:none;
+}
+/* 兼容ie低版本*/
+.clear{
+    *zoom:1;
+}
+.gray{
+    color: rgb(206,206,206);
+}
+/*left style*/
+#left{
+    width: 100px;
+    background-color: rgb(30,37,48);
+}
+#left .top{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 93%;
+    padding:0 20px;
+}
+#left .top img{
+    display: block;
+    margin-top: 20px;
+}
+#left-bottom{
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 7%;
+}
+#left-bottom .img-right{
+    margin-left: 20px;
+}
+/*right style*/
+#right{
+    width: 250px;
+    background-color: rgb(36,44,59);
+}
+#right-top{
+    padding: 30px;
+    height: 93%;
+    width: 250px;
+}
+#right span{
+    font-size: 10px;
+    color:  #5b6779;
+    float: left;
+}
+#right .img-right{
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+}
+#right .img-center{
+    display: inline-block;
+    float: left;
+}
+#right a{
+    text-decoration: none;
+    color:  #b7c0cd;
+}
+#right ul li{
+    margin-top: 20px;
+}
+#right .ul2{
+    border-top: 1px solid rgb(41,51,69);
+    border-bottom: 1px solid rgb(41,51,69);
+    margin-top: 20px;
+    padding: 20px 0;
+}
+#right .ul2 a{
+    margin-left: 10px;
+}
+#right .ul3{
+    margin-top: 20px;
+}
+#right-bottom{
+    position: fixed;
+    bottom: 0;
+    height: 7%;
+    width: 250px;
+    padding: 0 30px;
+    background-color: rgb(36,44,59);
+}
+#right-bottom span{
+    color: white;
+    display: inline-block;
+}
+#right .bottom-right{
+    margin-left: 35px;
+}
+/*main style*/
+main{
+    flex: 1;
+}
+/*main header style*/
+header .head-top{
+    padding: 30px;
+    height: 80px;
+
+}
+header .head-top h2{
+    float: left;
+    display: inline-block;
+}
+header .head-top2{
+    display: flex;
+    align-items: flex-start;
+    position: fixed;
+    right: 0;
+    top: 20px;
+    margin-right: 20px;
+    background-color: white;
+    z-index: 2;
+}
+header .head-top2 .img1{
+    margin-right: 1em;
+    cursor: pointer;
+}
+header .head-top2 .img2{
+    margin-left: 3em;
+    margin-top: 20px;
+    cursor: pointer;
+}
+header .head-top2 strong{
+    color: rgb(61,165,243);
+}
+header .head-top2 p{
+    color: grey;
+    flex: 1;
+}
+/*main-box-left style*/
+#main-box{
+    display: flex;
+}
+#main-box .box-left{
+    flex: 0 0 400px;
+    border-right: 1px solid rgb(234,236,239);
+}
+#main-box .sou{
+    border-bottom: 1px solid rgb(234,236,239);
+    border-top: 1px solid rgb(234,236,239);
+
+    height: 70px;
+    padding: 20px 30px;
+    position: relative;
+}
+#main-box .sou input{
+    height: 30px;
+    width: 340px;
+    border:1px solid rgb(234,236,239);
+    padding: 0 10px;
+}
+/*利用<i>来安放图标*/
+#main-box .sou .icon{
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background: url("http://wl.leafsir.cn/image/baiduSearch%20icon.png") no-repeat;
+    position: absolute;
+    top: 38%;
+    right: 45px;
+}
+/*main right style*/
+#main-box .box-right{
+    flex: 1;
+}
+#main-box .box-right-heard{
+    border-bottom: 1px solid rgb(234,236,239);
+    border-top: 1px solid rgb(234,236,239);
+    padding: 20px 30px;
+    height: 70px;
+    overflow: hidden;
+}
+#main-box .box-right-heard h3{
+    display: inline-block;
+}
+#main-box .right-heard-right1{
+    float: right;
+    position: relative;
+    font-size:0;
+}
+#main-box .box-right .button{
+    border:1px solid rgb(234,236,239);
+    width: 40px;
+    height: 40px;
+    background-color: rgb(251,251,253);
+}
+#main-box .right-heard-right2{
+    float: right;
+    width: 90px;
+    height: 40px;
+    padding: 10px;
+    border-left: 1px solid rgb(234,236,239);
+}
+#main-box .right-heard-right3{
+    float: right;
+    position: relative;
+    font-size:0;
+    margin-right: 20px;
+}
+#main-box .box-right-heard i{
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 38%;
+    cursor: pointer;
+}
+#main-box .right-heard-right1 .icon1{
+    background: url("http://wl.leafsir.cn/image/baidu/Arrow%20right.png") no-repeat;
+    right: 1px;
+}
+#main-box .right-heard-right1 .icon2{
+    background: url("http://wl.leafsir.cn/image/baidu/Arrow%20left.png") no-repeat;
+    right: 45px;
+}
+#main-box .right-heard-right3 .icon1{
+    background: url("http://wl.leafsir.cn/image/baidu/Trash%20icon.png") no-repeat;
+    right: 7%;
+    top: 30%;
+}
+#main-box .right-heard-right3 .icon2{
+    background: url("http://wl.leafsir.cn/image/baidu/Upload%20icon.png") no-repeat;
+    right: 40%;
+    top: 30%;
+}
+#main-box .right-heard-right3 .icon3{
+    background: url("http://wl.leafsir.cn/image/baidu/User%20icon.png") no-repeat;
+    right: 73%;
+    top: 30%;
+}
+/*main left style*/
+#left-div{
+    height: 150px;
+    width: 400px;
+    padding: 30px;
+    border-bottom: 1px solid rgb(234,236,239);
+}
+#left-div .left-div-flex{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+#left-div .left-div-flex img{
+    margin-right: 1em;
+}
+#left-div .left-div-flex p{
+    flex: 1;
+}
+#left-div .left-div-flex strong{
+    color: rgb(15,175,255);
+}
+#left-div .left-div-flex strong:before{
+    display: inline-block;
+    margin-right: 5px;
+    content: url("http://wl.leafsir.cn/image/baidu/Status111.png");
+}
+#left-div .div-font1{
+display: inline-block;
+    margin-left: 12px;
+}
+#left-div  .div-font3{
+    display: inline-block;
+    float: left;
+    width: 300px;
+    font-size: 12px;
+}
+#left-div  .img-right{
+    display: inline-block;
+    float: right;
+    margin-top: 5px;
+    cursor: pointer;
+}
+#main-box .left-center{
+    height: 150px;
+    width: 400px;
+    padding: 30px;
+    border-bottom: 1px solid rgb(234,236,239);
+}
+#main-box .left-center-flex{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+#main-box .left-center-flex img{
+    margin-right: 1em;
+}
+#main-box .left-center-flex p{
+    flex: 1;
+}
+#main-box .left-center .div-font2{
+    display: inline-block;
+    width: 330px;
+    font-size: 12px;
+}
+/*right-box style*/
+#right-box{
+    padding: 0 30px;
+}
+#right-box .right-box-top{
+    margin-top: 30px;
+    position: relative;
+    margin-bottom: 20px;
+}
+#right-box .right-box-top p{
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+#right-box .right-box-top img{
+    position: absolute;
+    top: 0;
+}
+#right-box .right-box-right{
+    display: inline-block;
+    width: 730px;
+    margin-left: 70px;
+}
+#right-box .right-box-right .font1{
+    display: inline-block;
+    margin-left: 10px;
+}
+/*hr style*/
+/*hr默认是块级,有边框,不能使用color,使用background;*/
+hr{
+    margin-top: 10px;
+    height: 1px;
+    border: none;
+}
+.hr-left{
+    float: left;
+    width: 45%;
+}
+.hr-right{
+    width: 45%;
+    float: right;
+}
+ .hr-span{
+    display: inline-block;
+    margin-left: 10px;
+}
+ .gray1{
+     background:   rgb(234,236,239);
+ }
+ .blue1{
+     background-color: skyblue;
+ }
+ .blue2{
+     color: skyblue;
+ }
+ /*img style*/
+#img{
+    margin-left: 70px;
+    margin-bottom: 20px;
+}
+#img .img-left{
+    height: 100px;
+    width: 156px;
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+}
+/*opacity设为0是为了让素材透明*/
+#img .img-right{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    text-align: center;
+}
+/*我个人理解,设置,主悬浮后,次的表现*/
+#img .img-left:hover .img-right{
+    opacity: .7;
+    background-color: rgba(0, 0, 0, .7);
+    transition: all .5s;
+    cursor: pointer;
+}
+#img .img-right img{
+    margin-top: 20%;
+}
+#sou2{
+    font-size: 0;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+}
+#sou2 button{
+    width: 8%;
+    height: 50px;
+    display: inline-block;
+}
+#sou2 input{
+    height: 50px;
+    width: 92%;
+    display: inline-block;
+    padding: 0 20px;
+}
