@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="dec-number" type="number" min="0" placeholder="输入一个十进制非负整数">
+        <input id="bin-bit" type="number" min="0" placeholder="输入转化后二进制数字位数">
+        <button id="trans-btn" onclick="get()">转化为二进制</button>
+        <p id="result">运算结果</p>
+    <script>
+function get(){
+	var number1 = document.getElementById("dec-number").value;
+	var number2 = document.getElementById("bin-bit").value;
+	var result = document.getElementById("result");
+	// 判断有没有小数点确定是整数
+	if(number1.indexOf('.') == -1){
+		var number3 = dec2bin(number1);
+		if(number3.length>number2){
+			// 返回的是数组所以需要转为字符串
+			result.innerHTML = number3.join('');
+			console.log("bin-bit小于转化后的二进制本身位数");
+		}else{
+			// 位数减去二进制得出需要补多少个0
+			number4= number2-number3.length ;
+			while(number4){
+				number3.unshift(0);
+				number4--;
+			}
+			result.innerHTML = number3.join('');
+		}
+	}else{
+		result.innerHTML = "数字必须是整数";
+	}
+}
+function dec2bin(decNumber) {
+    // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+	var temp = [];
+	// a 是为了存储余数
+	var a = 0;
+	// 如果decNumber 不为负数则一直循环
+	while(decNumber){
+		a = decNumber % 2;
+		//parseInt 是整除
+		decNumber = parseInt(decNumber/2);
+		//添加到最前面
+		temp.unshift(a);
+	}
+	return temp;
+}
+
+// 实现党点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+// 新的需求是，转化显示后的二进制数为bin-bit中输入的数字宽度，例如
+// dec-number为5，bin-bit为5，则转化后数字为00101
+// 如果bin-bit小于转化后的二进制本身位数，则使用原本的位数，如dec-number为5，bin-bit为2，依然输出101，但同时在console中报个错
+// Some coding
+
+    </script>
+</body>
+</html>

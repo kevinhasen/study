@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+		<input id="first-number" type="number" value="0" placeholder="第一个数字">
+        <input id="second-number" type="number" value="0" placeholder="第二个数字">
+        <button id="add-btn"  onclick="add('+')">加</button>
+        <button id="minus-btn" onclick="add('-')">减</button>
+        <button id="times-btn" onclick="add('*')">乘</button>
+        <button id="divide-btn"  onclick="add('/')">除</button>
+        <p id="result">运算结果</p>
+    <script>
+    	function add(type){
+				var number1=document.getElementById("first-number").value;
+				var number2=document.getElementById("second-number").value;
+				var result = document.getElementById("result");
+					switch(type){
+						case '+' :
+						result.innerHTML = (+number1)+(+number2);
+						break;
+						case '-' :
+						result.innerHTML = (+number1)-(+number2);
+						break;
+						case '*' :
+						result.innerHTML = (+number1)*(+number2);
+						break;
+						case '/' :
+						if( number2 != 0 ){
+							result.innerHTML = (+number1)/(+number2);
+						}else{
+							console.log("错误,除数是0");
+							result.innerHTML = "错误,除数不能为0";
+							break;
+						}
+						break;
+						}
+		}
+        </script>
+</body>
+</html>

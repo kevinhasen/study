@@ -1,0 +1,23 @@
+<!----------------------------------------------
+练习使用循环和条件语句，实现如下需求：
+从1到100，以此在console输出各数字，但是，当数字为3的倍数或者含有3的时候，输出“PA”
+比如：1,2,PA,4,5,PA,……,11,PA,PA,14,PA……
+---------------------------------------------->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head> 
+	<body>
+		<script>
+			for(var i =1;i<20;i++){
+				if( i%3 == 0){
+					console.log("PA");
+					continue;
+				}
+				console.log(i);
+			}
+		</script>
+	</body>
+</html>
