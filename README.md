@@ -13,6 +13,7 @@
 | 根据ps设计稿设计页面 |        切图,透明        | [demo][6] |
 |   复杂页面的实现   |       css综合使用       | [demo][7] |
 |    js入门     | document,getElement | [demo][8] |
+|    找到那个DOM     | parentNode,querySelector | [demo][9] |
 
 ---
 
@@ -24,4 +25,4 @@
 [6]: https://kevinhasen.github.io/study/ife2018/seven
 [7]: https://kevinhasen.github.io/study/ife2018/eight
 [8]: https://kevinhasen.github.io/study/ife2018/seventeen
-
+[9]: https://kevinhasen.github.io/study/ife2018/nineteen
