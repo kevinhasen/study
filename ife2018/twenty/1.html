@@ -1,0 +1,36 @@
+<!----------------------------------------------
+当点击按钮 submit-btn 时，在console中输出 name 中的内容
+在输入过程中，如果按回车键，则同样执行上一条的需求
+在输入过程中，如果按 ESC 键，则把输入框中的内容清空
+---------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="name" type="text">
+<button id="submit-btn">Submit</button>
+<script>
+    var btn = document.querySelector('button');
+    var texts = document.querySelector('#name');
+    //在console中输出 name 中的内容
+    function change(){
+        console.log(texts.value);
+    }
+    //回车的code码是13,esc的码是27
+    function keychange(e){
+    if (e.keyCode == 13){
+        change();
+    }else if (e.keyCode == 27){
+        //如果按 ESC 键，则把输入框中的内容清空
+        texts.value = "";
+    }
+    }
+    //添加事件
+    btn.addEventListener('click',change)
+    texts.addEventListener('keydown',keychange)
+</script>
+</body>
+</html>

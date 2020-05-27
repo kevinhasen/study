@@ -1,0 +1,40 @@
+<!----------------------------------------------
+显示雪碧图的条件：
+需要一个设置好宽和高的容器
+需要设置background-position的值（默认为（0，0），也就是图片的左上角），即移动图片到自己想要的图标位置。
+左移X个单位，然后向上移Y个单位
+代码为：background-position：-xpx -ypx;
+---------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            background: url("http://ife.baidu.com/2016/static/img/erik_ce204002.jpg");
+            width: 480px;
+            height: 480px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var box = document.querySelector('#box');
+    setInterval(get,80);
+    var y = 0;
+    function get(){
+        //x轴不动,y轴动,向上
+        var position = "0px "+y+"px";
+        box.style.backgroundPosition = position;
+        // 有17个图片,17*480=8160
+        if (y == -8160){
+            //如果已经是最下面,则重置
+            y=0;
+        }
+        y -= 480;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!----------------------------------------------
+购物项应该出现在清单中。
+每个购物项都应该给出一个按钮，可以按下按钮从清单中删除该项。
+输入框应该是空白的并已聚焦，为你准备好输入另一个项。
+---------------------------------------------->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Shopping list example</title>
+    <style>
+        li {
+            margin-bottom: 10px;
+        }
+
+        li button {
+            font-size: 8px;
+            margin-left: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My shopping list</h1>
+
+<div>
+    <label for="item">Enter a new item:</label>
+    <input type="text" name="item" id="item">
+    <button>Add item</button>
+</div>
+
+<ul>
+
+</ul>
+
+<script>
+    //获取元素
+var uls = document.querySelector('ul');
+var texts = document.querySelector('#item');
+var btn = document.querySelector('button');
+function  btnchange() {
+    //创建li项目
+    var lis = document.createElement('li');
+    var spans = document.createElement('span');
+    var btns = document.createElement('button');
+    //值设置为span的文本内容
+    // var ts = document.createTextNode(texts.value);
+    // var dele = document.createTextNode('删除');
+    // btns.appendChild(dele);
+    // spans.appendChild(ts);
+    spans.textContent = texts.value;
+    btns.textContent = '删除';
+    lis.appendChild(spans);
+    lis.appendChild(btns);
+    uls.appendChild(lis);
+    // btns.addEventListener('click',change);
+    btns.onclick = function(){
+        uls.removeChild(lis);
+    }
+    //内容清空
+    texts.value = '';
+    // 输入框聚焦
+    texts.focus();
+}
+// function change(e) {
+//     //删除自身li
+//     uls.removeChild(e.target.parentNode);
+// }
+btn.addEventListener('click',btnchange);
+</script>
+</body>
+</html>
