@@ -15,6 +15,7 @@
 |    js入门     |   document,getElement    | [demo][8]  |
 |   找到那个DOM   | parentNode,querySelector | [demo][9]  |
 |   让你和页面对话   |         雪碧图,代理事件         | [demo][10] |
+|    js的居民    |        基本类型,引用类型         | [demo][11] |
 
 ---
 
@@ -28,3 +29,4 @@
 [8]: https://kevinhasen.github.io/study/ife2018/seventeen
 [9]: https://kevinhasen.github.io/study/ife2018/nineteen
 [10]: https://kevinhasen.github.io/study/ife2018/twenty
+[10]: https://kevinhasen.github.io/study/ife2018/twenty-two

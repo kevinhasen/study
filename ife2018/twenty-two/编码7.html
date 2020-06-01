@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="queue-input" type="text">
+<p id="queue-cont">栈内容：apple-&gt;pear</p>
+<button id="in-btn">进栈</button>
+<button id="out-btn">退栈</button>
+<button id="font-btn">打印栈顶元素内容</button>
+<button id="empty-btn">判断栈是否为空</button>
+
+<script>
+
+    var qu2 = document.querySelector('#queue-cont');
+    var bu = document.querySelectorAll('button');
+    var queue = ["apple", "pear"];
+    bu[0].onclick = function () {
+        var qu1 = document.querySelector('#queue-input').value;
+        queue.push(qu1);
+        qu2.innerHTML = "栈内容："+queue.join('->');
+    }
+    bu[1].onclick = function () {
+        queue.pop();
+        qu2.innerHTML = "栈内容："+queue.join('->');
+    }
+    bu[2].onclick =function () {
+        console.log("栈顶元素内容："+queue.pop());
+    }
+    bu[3].onclick = function () {
+        console.log(queue.length ==0 ?"为空":"不为空");
+    }
+</script>
+</body>
+</html>

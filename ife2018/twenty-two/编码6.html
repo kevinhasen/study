@@ -1,0 +1,43 @@
+<!----------------------------------------------
+实现如阅读材料中，队列的相关入队、出队、获取队头、判空的操作
+队头对应数组中第一个元素
+入队和出队操作后，需要在 id 为 queue-cont 的 p 标签中更新显示队列中的内容，队头在最左侧，中间用 <- 连接（练习使用数组的join方法）
+---------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="queue-input" type="text">
+<p id="queue-cont">队列内容：apple&lt;-pear</p>
+<button id="in-btn">入队</button>
+<button id="out-btn">出队</button>
+<button id="font-btn">打印队头元素内容</button>
+<button id="empty-btn">判断队列是否为空</button>
+
+<script>
+
+    var qu2 = document.querySelector('#queue-cont');
+    var bu = document.querySelectorAll('button');
+    var queue = ["apple", "pear"];
+    bu[0].onclick = function () {
+        var qu1 = document.querySelector('#queue-input').value;
+        queue.push(qu1);
+        qu2.innerHTML = "队列内容："+queue.join('<-');
+    }
+    bu[1].onclick = function () {
+        queue.shift();
+        qu2.innerHTML = "队列内容："+queue.join('<-');
+    }
+    bu[2].onclick =function () {
+        console.log("队头元素内容："+queue.shift());
+    }
+    bu[3].onclick = function () {
+        console.log(queue.length ==0 ?"为空":"不为空");
+    }
+
+</script>
+</body>
+</html>

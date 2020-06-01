@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr1 = [43, 54, 4, -4, 84, 100, 58, 27, 140];
+    console.log("从大到小输出:"+arr1.sort(function (a,b) {
+        return b-a;
+    }));
+    console.log("从小到大输出:"+arr1.sort(function (a,b) {
+    return a-b;
+    }));
+    var arr2 = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'];
+    console.log("字母顺序a-z:"+arr2.sort());
+    console.log("z-a进行排序:"+arr2.sort().reverse());
+    var arr3 = [[10, 14], [16, 60], [7, 44], [26, 35], [22, 63]];
+    console.log("按照每个元素中第二个数从大到小的顺序进行排序输出:"+arr3.sort(function (a,b) {
+    return  b[1] - a[1];
+    }));
+    var arr4 = [
+        {
+            id: 1,
+            name: 'candy',
+            value: 40
+        },
+        {
+            id: 2,
+            name: 'Simon',
+            value: 50
+        },
+        {
+            id: 3,
+            name: 'Tony',
+            value: 45
+        },
+        {
+            id: 4,
+            name: 'Annie',
+            value: 60
+        }
+    ];
+    arr4.sort(function (a, b) {
+        return b.value - a.value;
+    });
+    console.log("按元素对象的value值从小到大进行排序:");
+    console.log(arr4);
+</script>
+</body>
+</html>
