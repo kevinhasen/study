@@ -1,0 +1,187 @@
+<!----------------------------------------------
+使用上方的HTML结构（可以根据需要自行微调）为基础编写JavaScript代码
+当变更任何一个select选择时，更新 result-wrapper 的内容
+当所选时间早于现在时间时，文案为 现在距离 "所选时间" 已经过去 xxxx
+当所选时间晚于现在时间时，文案为 现在距离 "所选时间" 还有 xxxx
+注意当前时间经过所选时间时候的文案变化
+注意选择不同月份的时候，日期的可选范围不一样，比如1月可以选31天，11月只有30天，注意闰年
+同样，需要注意，通过优雅的函数封装，使得代码更加可读且可维护
+---------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+    <select id="year-select">
+    </select>
+
+    <select id="month-select">
+    </select>
+
+    <select id="day-select">
+    </select>
+
+    <select id="hour-select">
+    </select>
+
+    <select id="minute-select">
+    </select>
+
+    <select id="second-select">
+    </select>
+<p id="result-wrapper"></p>
+<script>
+    var result = document.querySelector('#result-wrapper');
+    var year = document.querySelector('#year-select');
+    var month = document.querySelector('#month-select');
+    var date = document.querySelector('#day-select');
+    var hour = document.querySelector('#hour-select');
+    var minute = document.querySelector('#minute-select');
+    var second = document.querySelector('#second-select');
+    var selects = document.querySelectorAll('select');
+    //数据初始化,
+    //初始化选择的结果
+    var yearchoose = 2000;
+    var monthchoose = 1;
+    var datechoose = 1;
+    var hourchoose = 0;
+    var minutechoose = 0;
+    var secondchoose = 0;
+    //记录定时器的id
+    var id = 0;
+
+    showtime();
+    // 把简单的重复的封装为一个函数
+    // 第一个参数是要循环次数,第二个是要添加的日期,第三个是下标值
+    function repeat(n,type,count){
+        let i = 0;
+        i+=count;
+        n+=count;
+        for (;i <= n; i++) {
+            let option = document.createElement("option");
+            option.value = i;
+            option.innerHTML = i;
+            type.appendChild(option);
+        }
+    }
+    //年份初始化
+    repeat(30,year,2000);
+    //月份初始化
+    repeat(11,month,1);
+    //天数初始化
+    repeat(30,date,1);
+    //小时初始化
+    repeat(23,hour,0);
+    //分钟初始化
+    repeat(59,minute,0);
+    //秒数初始化
+    repeat(59,second,0);
+    //添加事件
+    for(let key in selects){
+        if (selects[key].id == 'year-select' || selects[key].id == 'month-select'){
+                        selects[key].onchange= function(){
+                        yearchoose = +(year.options[year.selectedIndex].value);
+                        monthchoose = +(month.options[month.selectedIndex].value);
+                        changetime(yearchoose, monthchoose);
+                        showtime();
+                    }
+        }else {
+                         selects[key].onchange= function(){
+                        datechoose = +(date.options[date.selectedIndex].value);
+                        hourchoose = +(hour.options[hour.selectedIndex].value);
+                        minutechoose = +(minute.options[minute.selectedIndex].value);
+                        secondchoose = +(second.options[second.selectedIndex].value);
+                        showtime();
+                         }
+        }
+    }
+    //根据月份改变日期时间
+    function changetime(year, month) {
+        let day='';
+        if (month == 2){
+            // 闰年
+            if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+                day = 29;
+            }
+            //平年
+            else {
+                day = 28;
+            }
+        }else if (month ==4 || month == 6 || month == 9 || month ==  4){
+            day = 30;
+        }else {
+            day = 31;
+        }
+        //删去原有子节点
+        date.innerHTML = " ";
+        repeat(day-1,date,1);
+        //更换月份之后更改日的值
+        datechoose = 1;
+    }
+
+    //当前时间显示处理
+    function showtime() {
+        clearInterval(id);
+        //因为月份基于0的,所以减一
+        let myday = new Date(yearchoose, monthchoose - 1, datechoose, hourchoose, minutechoose, secondchoose);
+        id = setInterval(function () {
+            let today = new Date();
+            //日期输出
+            result.innerHTML = captime(myday) + gaptime(today.getTime(),myday.getTime());
+        }, 1000);
+    }
+    //显示距离日期
+    function gaptime(to,my) {
+            let gap ='';
+            let data = '';
+            let date, hour, minute, second;
+            if (to > my) {
+                gap = to - my;
+            }
+            else {
+                gap = my - to;
+            }
+            date = Math.floor(gap / (1000 * 60 * 60 * 24));
+            hour = Math.floor((gap - date * (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            minute = Math.floor((gap - date * (1000 * 60 * 60 * 24) - hour * (1000 * 60 * 60)) / (1000 * 60));
+            second = Math.floor((gap - date * (1000 * 60 * 60 * 24) - hour * (1000 * 60 * 60) - minute * (1000 * 60)) / 1000);
+            if (to <= my) {
+                data =  " 还有" + date + "天" + hour + "小时" + minute + "分" + second + "秒";
+            }
+            else {
+                data =  " 已经过去" + date + "天" + hour + "小时" + minute + "分" + second + "秒";
+            }
+            return data;
+    }
+    //显示选择的时间
+    function captime(my) {
+        let year = my.getFullYear();
+        let mon = my.getMonth()+1;
+        let day = my.getDate();
+        let week = my.getDay();
+        let h = my.getHours();
+        let m = my.getMinutes();
+        let s = my.getSeconds();
+        h = check(h);
+        m = check(m);
+        s = check(s);
+        mon = check(mon);
+        day = check(day);
+        week = getweek(week);
+        let test =  "现在距离" +year+"年"+mon+"月"+day+"日星期"+week+" "+h+":"+m+":"+s;
+        return test;
+    }
+    //星期格式
+    function getweek(i) {
+        let week = ["日","一","二","三","四","五","六",];
+        return week[i];
+    }
+    // 在数字 < 10 之前加零
+    function check(i) {
+        return i < 10 ? "0" + i:i;
+    }
+</script>
+</body>
+</html>

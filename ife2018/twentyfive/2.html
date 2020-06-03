@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="time()">
+<div id="top1"></div>
+<div id="top2"></div>
+<script>
+    var top1 = document.querySelector('#top1');
+    var top2 = document.querySelector('#top2');
+    function time() {
+        var today = new Date();
+        var year = today.getFullYear();
+        var mon = today.getMonth();
+        var day = today.getDate();
+        var week = today.getDay();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        top1.innerHTML = out(true,year,mon,day,week,h,m,s);
+        top2.innerHTML = out(false,year,mon,day,week,h,m,s);
+        setInterval(time,1000);
+    }
+    //输出封装
+    function out(type,year,mon,day,week,h,m,s) {
+        m = check(m);
+        s = check(s);
+        mon = check(mon);
+        day = check(day);
+        var test = '';
+        if (type){
+            week = get(type,week);
+            test =  year+"年"+mon+"月"+day+"日星期"+week+" "+h+":"+m+":"+s;
+        }else {
+            week = get(type,week);
+            test= year+"-"+mon+"-"+day+" "+week+" "+h+":"+m+":"+s;
+            if (h>12){
+            test +=" PM";
+            }else {
+                test += " AM";
+            }
+
+        }
+        return test;
+    }
+    //日期转换
+    function get(type,i) {
+    switch (i) {
+        case 1:
+            if (type){
+                i="一";
+            }else{
+                i = "Monday";
+            }
+            break;
+        case 2:
+            if (type){
+                i="二";
+            }else{
+                i = "Tuesday";
+            }
+            break;
+        case 3:
+            if (type){
+                i="三";
+            }else{
+                i = "Wednesday";
+            }
+            break;
+        case 4:
+            if (type){
+                i="四";
+            }else{
+                i = "Thursday";
+            }
+            break;
+        case 5:
+            if (type){
+                i="五";
+            }else{
+                i = "Friday";
+            }
+            break;
+        case 6:
+            if (type){
+                i="六";
+            }else{
+                i = "Saturday";
+            }
+            break;
+        case 7:
+            if (type){
+                i="日";
+            }else{
+                i = "Sunday";
+            }
+            break;
+    }
+    return i;
+    }
+    // 在数字 < 10 之前加零
+    function check(i) {
+        return i < 10 ? "0" + i:i;
+    }
+</script>
+</body>
+</html>
