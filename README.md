@@ -1,4 +1,5 @@
 # 百度前端代码练习
+
 ---
 
 任务列表
@@ -16,7 +17,8 @@
 |   找到那个DOM   | parentNode,querySelector | [demo][9]  |
 |   让你和页面对话   |         雪碧图,代理事件         | [demo][10] |
 |    js的居民    |        基本类型,引用类型         | [demo][11] |
-|    倒数开始    |        函数封装,日期操作        | [demo][12] |
+|    倒数开始     |        函数封装,日期操作         | [demo][12] |
+|  给爱的人发个邮件吧  |      流程图,oninput事件       | [demo][13] |
 
 ---
 
@@ -32,3 +34,4 @@
 [10]: https://kevinhasen.github.io/study/ife2018/twenty
 [11]: https://kevinhasen.github.io/study/ife2018/twentytwo
 [12]: https://kevinhasen.github.io/study/ife2018/twentyfive
+[13]: https://kevinhasen.github.io/study/ife2018/twentyeight
